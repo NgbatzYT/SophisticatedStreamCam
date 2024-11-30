@@ -11,7 +11,7 @@ namespace SophisticatedStreamCam.Sceeps
     {
         public bool timer = true;
         public bool Streaming = false;
-        private GameObject Stem;
+        public static GameObject Stem;
 
         public void Start()
         {
@@ -25,14 +25,14 @@ namespace SophisticatedStreamCam.Sceeps
                 Streaming = true;
                 timer = false;
                 StartCoroutine(TimerCoroutine(5f));
-                Plugin.streamer.StartStreaming(Plugin.currentStreamKey);
+                Plugin.streamered.StartStreaming(Plugin.currentStreamKey);
             }
             else if(col.name == "RightHandTriggerCollider" && timer && Streaming)
             {
                 Streaming = false;
                 timer = false;
                 StartCoroutine(TimerCoroutine(5f));
-                Plugin.streamer.StopStreaming();
+                Plugin.streamered.StopStreaming();
             }
         }
 

@@ -5,17 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Assets\**" />
-    <EmbeddedResource Remove="Assets\**" />
-    <None Remove="Assets\**" />
+    <None Remove="cam" />
+    <None Remove="Resources\cam" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="AssetBundles\cam" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="AssetBundles\cam" />
+    <EmbeddedResource Include="Resources\cam" />
   </ItemGroup>
 
   <ItemGroup>

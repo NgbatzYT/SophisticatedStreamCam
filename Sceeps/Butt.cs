@@ -8,14 +8,13 @@ namespace SophisticatedStreamCam.Sceeps
         public bool timer = true;
         private bool fp = false;
 
-        private GameObject fpp;
+        public static GameObject fpp;
 
-        private GameObject bk;
+        public static GameObject bk;
 
         public void Start()
         {
-            fpp = GameObject.Find("firstp");
-            bk = GameObject.Find("back");
+
         }
         public void OnTriggerEnter(Collider col)
         {
