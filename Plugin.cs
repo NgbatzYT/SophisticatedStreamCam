@@ -39,6 +39,7 @@ namespace SophisticatedStreamCam
 
             //Set Parent Pos (DO NOT CHANGE)
             assetBundleParent.transform.position = new Vector3(-67.2225f, 11.57f, -82.611f);
+	    Ppman3000();
         }
 
         public AssetBundle LoadAssetBundle(string path)
@@ -72,12 +73,6 @@ namespace SophisticatedStreamCam
                 "The Twitch stream key for streaming."
             );
             string currentStreamKey = streamKey.Value;
-        }
-
-        private IEnumerator StartTime(float duration)
-        {
-            yield return new WaitForSeconds(duration);
-            Ppman3000();
         }
         public void Ppman3000()
         {
