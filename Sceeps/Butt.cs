@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SophisticatedStreamCam.Sceeps
 {
-    public class Butt : MonoBehaviour
+    public class Butt : GorillaPressableButton
     {
         public bool timer = true;
         private bool fp = false;
@@ -12,15 +12,15 @@ namespace SophisticatedStreamCam.Sceeps
 
         public static GameObject bk;
 
-        public void Start()
+        public override void Start()
         {
-
+            gameObject.layer = 18;
         }
-        public void OnTriggerEnter(Collider col)
+        public override void ButtonActivation()
         {
             GameObject fartas = GameObject.Find("frist");
             GameObject farta = GameObject.Find("bakc");
-            if(col.name == "RightHandTriggerCollider" && timer && !fp)
+            if(timer && !fp)
             {
                 timer = false;
                 fp = true;
@@ -30,7 +30,7 @@ namespace SophisticatedStreamCam.Sceeps
                 farta.SetActive(false);
                 StartCoroutine(TimerCoroutine(2f));
             }
-            else if(col.name == "RightHandTriggerCollider" && timer && fp)
+            else if(timer && fp)
             {
                 timer = false;
                 fp = false;

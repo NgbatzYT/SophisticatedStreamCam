@@ -7,27 +7,27 @@ using UnityEngine;
 
 namespace SophisticatedStreamCam.Sceeps
 {
-    public class StreamButt : MonoBehaviour
+    public class StreamButt : GorillaPressableButton
     {
         public bool timer = true;
         public bool Streaming = false;
         public static GameObject Stem;
 
-        public void Start()
+        public override void Start()
         {
             Stem = GameObject.Find("ind");
         }
 
-        public void OnTriggerEnter(Collider col)
+        public override void ButtonActivation()
         {
-            if(col.name == "RightHandTriggerCollider" && timer && !Streaming)
+            if(timer && !Streaming)
             {
                 Streaming = true;
                 timer = false;
                 StartCoroutine(TimerCoroutine(5f));
                 Plugin.streamered.StartStreaming(Plugin.currentStreamKey);
             }
-            else if(col.name == "RightHandTriggerCollider" && timer && Streaming)
+            else if(timer && Streaming)
             {
                 Streaming = false;
                 timer = false;

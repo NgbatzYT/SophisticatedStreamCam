@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.IO;
+﻿using System.IO;
 using System.Reflection;
 using BepInEx;
 using BepInEx.Configuration;
@@ -39,7 +38,7 @@ namespace SophisticatedStreamCam
 
             //Set Parent Pos (DO NOT CHANGE)
             assetBundleParent.transform.position = new Vector3(-67.2225f, 11.57f, -82.611f);
-	    Ppman3000();
+            Setup();
         }
 
         public AssetBundle LoadAssetBundle(string path)
@@ -74,7 +73,7 @@ namespace SophisticatedStreamCam
             );
             string currentStreamKey = streamKey.Value;
         }
-        public void Ppman3000()
+        public void Setup()
         {
             Camera mainCamera = Camera.main;
             if (mainCamera == null)
@@ -116,7 +115,9 @@ namespace SophisticatedStreamCam
             StreamButt.Stem = GameObject.Find("ind");
             Butt.fpp = GameObject.Find("firstp");
             Butt.bk = GameObject.Find("back");
+            GameObject HandleL = GameObject.Find("HandleL");
 
+            HandleL.AddComponent<GorillaGrabber>();
 			swi.AddComponent<Butt>();
             swis.AddComponent<StreamButt>();
         }
